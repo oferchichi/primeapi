@@ -104,7 +104,7 @@ class ciscoPrime:
 					enough_results = True
 				all_responses.append(rr)
 			except:
-				print ("error... {}",format(sys.exc_info()))
+				print ("error...",sys.exc_info())
 				print (rsp.text)
 				return rsp
 		return all_responses
