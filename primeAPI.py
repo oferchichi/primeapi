@@ -132,7 +132,7 @@ if __name__ == "__main__":
 				row.append(None)
 		return row
 
-	print "Starting..."
+	print ("Starting...")
 	api = ciscoPrime()
 	rsp = api.getCurrentSessionsWithPaging()
 
@@ -142,6 +142,8 @@ if __name__ == "__main__":
 			'sessionStartTime','sessionEndTime',\
 			'packetsReceived','packetsSent','bytesReceived','bytesSent','throughput'\
 			]			
+
+                
 
 	rows_out = [keys]
 
