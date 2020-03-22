@@ -7,7 +7,7 @@ import csv
 
 
 class ciscoPrime:
-    base_url="https://172.20.0.10/webacs/api/v3/data/"
+	base_url="https://172.20.0.10/webacs/api/v3/data/"
 	session_cookie = None
 	auth=("sorena","sorena123")
 
@@ -29,8 +29,8 @@ class ciscoPrime:
 		with open("prime.session",'w') as f:
 			print ("saving session cookie {0}",format(c))
 			f.write(c)
-			
-	def makeRequest(self,url,start=0,numresult=500):	
+
+	def makeRequest(self,url,start=0,numresult=500):
 		url = url+"&.firstResult=%d&.maxResults=%d" % (start,numresult)
 		print ("request URL {0}",format(url))
 		if self.session_cookie == None:
@@ -141,14 +141,14 @@ if __name__ == "__main__":
 			'snr','rssi',\
 			'sessionStartTime','sessionEndTime',\
 			'packetsReceived','packetsSent','bytesReceived','bytesSent','throughput'\
-			]			
+			]
 
-                
+
 
 	rows_out = [keys]
 
 	for rr in rsp:
-    	#print json.dumps(rr,indent=4)
+		#print json.dumps(rr,indent=4)
 		elist = rr['queryResponse']['entity']
 		for e in elist:
 			vmap = e['clientSessionsDTO']
