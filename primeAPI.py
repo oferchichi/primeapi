@@ -76,7 +76,7 @@ class ciscoPrime:
 				else:
 					enough_results = True
 			except:
-				print ("error..."sys.exc_info())
+				print ("error...",sys.exc_info())
 				print (rsp.text)
 				return rsp
 		return ssnlist
