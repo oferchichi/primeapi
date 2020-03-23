@@ -4,7 +4,12 @@ import requests
 import json
 import sys
 import csv
-
+   
+try:
+    from requests.packages.urllib3.exceptions import InsecureRequestWarning
+    requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+except ImportError:
+    pass 
 
 class ciscoPrime:
 	base_url="https://172.20.0.10/webacs/api/v3/data/"
